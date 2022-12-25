@@ -1,0 +1,8 @@
+C:/Projekty/TDD_embedded/adc_bat_unity_fff/out/CMakeFiles/vbat.dir
+C:/Projekty/TDD_embedded/adc_bat_unity_fff/out/CMakeFiles/test.dir
+C:/Projekty/TDD_embedded/adc_bat_unity_fff/out/CMakeFiles/edit_cache.dir
+C:/Projekty/TDD_embedded/adc_bat_unity_fff/out/CMakeFiles/rebuild_cache.dir
+C:/Projekty/TDD_embedded/adc_bat_unity_fff/out/unity/CMakeFiles/Unity.dir
+C:/Projekty/TDD_embedded/adc_bat_unity_fff/out/unity/CMakeFiles/test.dir
+C:/Projekty/TDD_embedded/adc_bat_unity_fff/out/unity/CMakeFiles/edit_cache.dir
+C:/Projekty/TDD_embedded/adc_bat_unity_fff/out/unity/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,24 @@
+Start testing: Dec 25 22:14 ?rodkowoeuropejski czas stand.
+----------------------------------------------------------
+1/1 Testing: test_nr_1
+1/1 Test: test_nr_1
+Command: "C:/Projekty/TDD_embedded/adc_bat_unity_fff/out/vbat.exe"
+Directory: C:/Projekty/TDD_embedded/adc_bat_unity_fff/out
+"test_nr_1" start time: Dec 25 22:14 ?rodkowoeuropejski czas stand.
+Output:
+----------------------------------------------------------
+C:/Projekty/TDD_embedded/adc_bat_unity_fff/src/vbat.c:23:test_function_should_doBlahAndBlah:PASS
+C:/Projekty/TDD_embedded/adc_bat_unity_fff/src/vbat.c:17:test_function_should_doAlsoDoBlah:FAIL: Expected 4 Was 2
+
+-----------------------
+2 Tests 1 Failures 0 Ignored 
+FAIL
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Failed.
+"test_nr_1" end time: Dec 25 22:14 ?rodkowoeuropejski czas stand.
+"test_nr_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Dec 25 22:14 ?rodkowoeuropejski czas stand.

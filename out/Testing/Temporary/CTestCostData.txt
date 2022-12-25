@@ -1,0 +1,4 @@
+vbat 0 0
+test_nr_1 1 0
+---
+test_nr_1
