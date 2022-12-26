@@ -22,14 +22,12 @@ TEST_GROUP(ProductionCode);
 TEST_SETUP(ProductionCode)
 {
   vbat_init();
-
-  FFF_FAKES_LIST(RESET_FAKE);
-	FFF_RESET_HISTORY();
 }
 
 TEST_TEAR_DOWN(ProductionCode)
 {
-
+  FFF_FAKES_LIST(RESET_FAKE);
+	FFF_RESET_HISTORY();
 }
 
 TEST(ProductionCode, FiveSignalBelowAlarm)
@@ -40,7 +38,7 @@ TEST(ProductionCode, FiveSignalBelowAlarm)
   {
     vbat_check();
   }
-  TEST_ASSERT_EQUAL_INT(1, vbat_check_alarm_state());
+  TEST_ASSERT_EQUAL_INT(1, led_on_fake.call_count);
 }
 
 TEST(ProductionCode, FourSignalBelowAlarm1OverTreshold)
@@ -51,11 +49,11 @@ TEST(ProductionCode, FourSignalBelowAlarm1OverTreshold)
     vbat_check();
   }
   read_adc_fake.return_val = ALARM_THRESHOLD_LEVEL;
-  TEST_ASSERT_EQUAL_INT(0, vbat_check_alarm_state());
+  TEST_ASSERT_EQUAL_INT(0, led_on_fake.call_count);
 }
 
 TEST(ProductionCode, LedIsOffAfterStart)
 {
-  TEST_ASSERT_EQUAL_INT(1, led_init_fake.call_count);
+  TEST_ASSERT_EQUAL_INT(1, led_off_fake.call_count);
 }
 

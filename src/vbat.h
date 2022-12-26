@@ -4,4 +4,3 @@
 
 void vbat_init(void);
 void vbat_check(void);
-int vbat_check_alarm_state(void);

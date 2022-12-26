@@ -2,7 +2,6 @@
 #include "adc_driver.h"
 #include "led_driver.h"
 
-static int alarm = 0;
 static int alarm_cnt = 0;
 
 void vbat_check(void)
@@ -18,18 +17,12 @@ void vbat_check(void)
     
     if (alarm_cnt >= 5)
     {
-        alarm = 1;
+        led_on();
     }
-}
-
-int vbat_check_alarm_state(void)
-{
-    return alarm;
 }
 
 void vbat_init(void)
 {
-    led_init();
-    alarm = 0;
+    led_off();
     alarm_cnt = 0;
 }
