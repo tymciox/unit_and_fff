@@ -49,7 +49,24 @@ TEST(ProductionCode, FourSignalBelowAlarm1OverTreshold)
     vbat_check();
   }
   read_adc_fake.return_val = ALARM_THRESHOLD_LEVEL;
+  vbat_check();
   TEST_ASSERT_EQUAL_INT(0, led_on_fake.call_count);
+}
+
+TEST(ProductionCode, FiveSignalBelowAlarm5OverTreshold)
+{
+  read_adc_fake.return_val = ALARM_THRESHOLD_LEVEL-1;
+  for (int i=0; i<5; i++)
+  {
+    vbat_check();
+  }
+  read_adc_fake.return_val = ALARM_THRESHOLD_LEVEL;
+  for (int i=0; i<5; i++)
+  {
+    vbat_check();
+  }
+  TEST_ASSERT_EQUAL_INT(1, led_off_fake.call_count);
+  TEST_ASSERT_TRUE(led_on_fake.call_count > 0);
 }
 
 TEST(ProductionCode, LedIsOffAfterStart)
