@@ -22,6 +22,7 @@
             },
             "args": [],
             "group": "build",
+            "dependsOn": [ "build" ]
         }
     ]
 }
