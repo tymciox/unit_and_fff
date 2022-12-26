@@ -20,11 +20,12 @@ TEST_TEAR_DOWN(ProductionCode)
 
 }
 
-TEST(ProductionCode, TestFunctionShouldDoBlahAndBlah)
+TEST(ProductionCode, FiveSignalBelowAlarm)
 {
-  TEST_ASSERT_EQUAL_INT(2, 2);
+  for (int i=0; i<5; i++)
+  {
+    vbat_check(ADC_LEVEL_BELOW_THRESHOLD);
+  }
+  TEST_ASSERT_EQUAL_INT(1, vbat_check_alarm_state());
 }
-TEST(ProductionCode, TestFunctionShouldAlsoDoBlah)
-{
-  TEST_ASSERT_EQUAL_INT(4, 2);
-}
+

@@ -3,6 +3,5 @@
 
 TEST_GROUP_RUNNER(ProductionCode)
 {
-  RUN_TEST_CASE(ProductionCode, TestFunctionShouldDoBlahAndBlah);
-  RUN_TEST_CASE(ProductionCode, TestFunctionShouldAlsoDoBlah);
+  RUN_TEST_CASE(ProductionCode, FiveSignalBelowAlarm);
 }
