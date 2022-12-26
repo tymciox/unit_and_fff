@@ -15,13 +15,12 @@ include_directories(${INCLUDE_DIR})
 add_executable(
     ${CMAKE_PROJECT_NAME}
     src/vbat.c
+    test/TestProductionCode_main.c
+    test/TestProductionCode_Runner.c
+    test/TestProductionCode.c
 )
 
 target_link_libraries(
     ${CMAKE_PROJECT_NAME}
     Unity
 )
-
-enable_testing()
-
-add_test(test_nr_1 ${CMAKE_PROJECT_NAME})
