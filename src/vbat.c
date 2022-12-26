@@ -4,7 +4,7 @@
 
 static int alarm = 0;
 
-void vbat_check(adc_raw_t adc_val)
+void vbat_check(void)
 {
     alarm = 1;
 }
