@@ -10,7 +10,11 @@ set(INCLUDE_DIR
     src
 )
 
-include_directories(${INCLUDE_DIR})
+set(INCLUDE_FFF
+    test/fff
+)
+
+include_directories(${INCLUDE_DIR} ${INCLUDE_FFF})
 
 add_executable(
     ${CMAKE_PROJECT_NAME}
