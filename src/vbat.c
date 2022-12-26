@@ -29,6 +29,7 @@ int vbat_check_alarm_state(void)
 
 void vbat_init(void)
 {
+    led_init();
     alarm = 0;
     alarm_cnt = 0;
 }

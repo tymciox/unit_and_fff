@@ -6,13 +6,25 @@
 DEFINE_FFF_GLOBALS;
 
 FAKE_VALUE_FUNC(adc_raw_t, read_adc);
-FAKE_VOID_FUNC(IO_MEM_RD8, uint32_t);
+FAKE_VOID_FUNC(led_init);
+FAKE_VOID_FUNC(led_on);
+FAKE_VOID_FUNC(led_off);
+
+#define FFF_FAKES_LIST(FAKE) \
+  FAKE(read_adc) \
+  FAKE(led_init) \
+  FAKE(led_on) \
+  FAKE(led_off)
+
 
 TEST_GROUP(ProductionCode);
 
 TEST_SETUP(ProductionCode)
 {
   vbat_init();
+
+  FFF_FAKES_LIST(RESET_FAKE);
+	FFF_RESET_HISTORY();
 }
 
 TEST_TEAR_DOWN(ProductionCode)
@@ -40,5 +52,10 @@ TEST(ProductionCode, FourSignalBelowAlarm1OverTreshold)
   }
   read_adc_fake.return_val = ALARM_THRESHOLD_LEVEL;
   TEST_ASSERT_EQUAL_INT(0, vbat_check_alarm_state());
+}
+
+TEST(ProductionCode, LedIsOffAfterStart)
+{
+  TEST_ASSERT_EQUAL_INT(1, led_init_fake.call_count);
 }
 
