@@ -13,5 +13,15 @@
             "args": [],
             "group": "build",
         }
+        {
+            "label": "run",
+            "type": "shell",
+            "command": "./vbat.exe",
+            "options": {
+                "cwd": "${workspaceFolder}/test/build"
+            },
+            "args": [],
+            "group": "build",
+        }
     ]
 }
